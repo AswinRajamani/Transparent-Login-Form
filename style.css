@@ -1,0 +1,112 @@
+*,::after,::before{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-weight: lighter;
+}
+
+body{
+    margin: 0;
+}
+
+:root{
+    --color: 200,100%,50%;
+    --light-color: 200,100%,91%;
+    --dark-color: 200,100%,6%;
+    --success-color: 100,60%,50%;
+    --error-color: 0,50%,60%;
+}
+
+h1{
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-weight: normal;
+}
+
+.container{
+    background-image: url("background-image.jpg");
+    height: 100vh;
+    width:100vw;
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.login-container{
+    background-color: hsl(var(--dark-color),0.4);
+    padding:40px 30px;
+    border-radius: 16px;
+    width:80%;
+    max-width: 600px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    color:white;
+}
+
+.input-container input{
+    padding: 12px;
+    border:none;
+    outline:none;
+    border-radius: 3px;
+    background-color: hsl(var(--light-color),0.3);
+    color: white;
+    font-size: .90em;
+}
+
+.input-container input:focus {
+    box-shadow: 0 0 0 1px hsl(var(--color));
+}
+
+.login-button{
+    margin-top: 5px;
+    padding: 12px;
+    background-color: hsl(var(--color),0.3);
+    border: none;
+    outline: none;
+    color:white;
+    font-size: 1.15em;
+    border-radius: 4px;
+}
+
+button:focus{
+    box-shadow: 0 0 0 1px hsl(var(--color));
+}
+
+.input-container .msg{
+    display: none;
+    font-size: 12px;
+}
+
+.input-container.success .msg,
+.input-container.error .msg{
+    display: block;
+}
+
+.input-container.success .msg{
+    color: hsl(var(--success-color));
+}
+
+.input-container.error .msg{
+    color: hsl(var(--error-color));
+}
+
+.input-container.success input:focus{
+    box-shadow: 0 0 0 1px hsl(var(--success-color));
+}
+
+.input-container.error input:focus{
+    box-shadow: 0 0 0 1px hsl(var(--error-color));
+}
